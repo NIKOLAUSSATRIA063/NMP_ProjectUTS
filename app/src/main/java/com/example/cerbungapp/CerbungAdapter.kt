@@ -26,7 +26,10 @@ class CerbungAdapter() : RecyclerView.Adapter<CerbungAdapter.CerbungViewHolder>(
             Picasso.get().load(url).into(imgPoster)
             txtTitle.text = Global.cerbungs[position].title
             txtDateUpdated.text = Global.cerbungs[position].lastUpdate
-            txtAuthor.text= Global.cerbungs[position].author
+            txtAuthor.text = Global.cerbungs[position].author
+//            txtManyParagraph.text =
+            txtManyLike.text = Global.cerbungs[position].like.toString()
+            txtDescription.text = Global.cerbungs[position].description
         }
 
     }

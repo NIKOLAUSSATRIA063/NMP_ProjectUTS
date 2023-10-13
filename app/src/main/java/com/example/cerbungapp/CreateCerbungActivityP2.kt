@@ -3,12 +3,14 @@ package com.example.cerbungapp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.example.cerbungapp.databinding.ActivityCreateCerbungBinding
 import com.example.cerbungapp.databinding.ActivityCreateCerbungP2Binding
 
 class CreateCerbungActivityP2 : AppCompatActivity() {
     private lateinit var binding: ActivityCreateCerbungP2Binding
 
+    var USERNAME = "USER"
     var CERBUNGTITLE = "title"
     var GENRESELECTED = "genre"
     var DESCRIPTION = "desc"
@@ -42,6 +44,8 @@ class CreateCerbungActivityP2 : AppCompatActivity() {
 
 
             var intent = Intent(this, CreateCerbungActivityP3::class.java)
+            var username = intent.getStringExtra(USERNAME).toString()
+            intent.putExtra(USERNAME, username)
             intent.putExtra(CERBUNGTITLE, tempTitle.toString())
             intent.putExtra(GENRESELECTED, tempGenreSelected.toString())
             intent.putExtra(DESCRIPTION, tempDescription.toString())
