@@ -25,5 +25,7 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, CreateCerbungActivity::class.java)
             startActivity(intent)
         }
+
+
     }
 }

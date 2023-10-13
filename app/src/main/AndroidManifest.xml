@@ -15,6 +15,9 @@
         android:theme="@style/Theme.CerbungApp"
         tools:targetApi="31">
         <activity
+            android:name=".CerbungDetails"
+            android:exported="false" />
+        <activity
             android:name=".CreateCerbungActivityP3"
             android:exported="false" />
         <activity
