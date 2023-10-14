@@ -12,8 +12,10 @@
         android:fillViewport="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -44,7 +46,7 @@
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/genreChip"
-                android:layout_width="80dp"
+                android:layout_width="0dp"
                 android:layout_height="44dp"
                 android:layout_marginStart="28dp"
                 android:layout_marginTop="16dp"
@@ -72,13 +74,58 @@
                 app:layout_constraintTop_toBottomOf="@+id/imagePoster" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="411dp"
-                android:layout_height="288dp"
+                android:id="@+id/recyclerViewDetailsCerbung"
+                android:layout_width="0dp"
+                android:layout_height="226dp"
                 android:layout_marginTop="12dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/authorsTxt" />
+
+            <Button
+                android:id="@+id/btnFollow"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="52dp"
+                android:text="Follow"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textNewParag" />
+
+            <Button
+                android:id="@+id/btnSubmit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="52dp"
+                android:layout_marginEnd="36dp"
+                android:text="Submit"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textNewParag" />
+
+            <EditText
+                android:id="@+id/textNewParag"
+                android:layout_width="0dp"
+                android:layout_height="96dp"
+                android:layout_marginTop="32dp"
+                android:ems="10"
+                android:hint="Continue The Story"
+                android:inputType="textMultiLine"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewLine" />
+
+            <TextView
+                android:id="@+id/textViewLine"
+                android:layout_width="400dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:background="#AFABAB"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.49"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/recyclerViewDetailsCerbung" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 

@@ -15,7 +15,7 @@ class CreateCerbungActivityP2 : AppCompatActivity() {
     var GENRESELECTED = "genre"
     var DESCRIPTION = "desc"
     var URL = "url"
-    var ACCESS = ""
+    var ACCESS = "access"
     var FIRSTPARAGRAPH = "paragraph"
 
     override fun onCreate(savedInstanceState: Bundle?) {

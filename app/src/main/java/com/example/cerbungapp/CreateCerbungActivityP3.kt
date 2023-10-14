@@ -20,7 +20,7 @@ class CreateCerbungActivityP3 : AppCompatActivity() {
     var GENRESELECTED = "genre"
     var DESCRIPTION = "desc"
     var URL = "url"
-    var ACCESS = ""
+    var ACCESS = "access"
     var FIRSTPARAGRAPH = "paragraph"
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -60,7 +60,7 @@ class CreateCerbungActivityP3 : AppCompatActivity() {
 
                 var dateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
                 var dateNow = dateFormat.format(Date())
-                var newCerbung = Cerbung(cerbungs.size, cerbugTitle.toString(), author.toString(), access.toString(), dateNow, urlImg.toString(), description.toString() , firstParagraph.toString(), 0)
+                var newCerbung = Cerbung(cerbugTitle.toString(), author.toString(), access.toString(), dateNow, urlImg.toString(), description.toString() , genreSelected.toString())
                 cerbungs.add(newCerbung)
                 Toast.makeText(this, "Tambah data berhasil", Toast.LENGTH_SHORT).show()
                 var intent = Intent(this, MainActivity::class.java)

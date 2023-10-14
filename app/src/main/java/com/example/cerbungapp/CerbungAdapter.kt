@@ -32,18 +32,14 @@ class CerbungAdapter() : RecyclerView.Adapter<CerbungAdapter.CerbungViewHolder>(
             txtDateUpdated.text = Global.cerbungs[position].lastUpdate
             txtAuthor.text = Global.cerbungs[position].author
 //            txtManyParagraph.text =
-            txtManyLike.text = Global.cerbungs[position].like.toString()
-            txtDescription.text = Global.cerbungs[position].description
+//            txtManyLike.text = Global.cerbungs[position].like.toString()
+//            txtDescription.text = Global.cerbungs[position].description
         }
 
         with(holder.binding){
             btnRead.setOnClickListener(){
                 val intent = Intent(holder.itemView.context, CerbungDetails::class.java)
                 intent.putExtra("idcerbung", position)
-//                intent.putExtra("urlcerbung", Global.cerbungs[position].url)
-//                intent.putExtra("genrecerbung", Global.cerbungs[position].genre)
-//                intent.putExtra("authorscerbung", Global.cerbungs[position].author)
-//                intent.putExtra("datecerbung", Global.cerbungs[position].lastUpdate)
                 holder.itemView.context.startActivity(intent)
             }
         }
