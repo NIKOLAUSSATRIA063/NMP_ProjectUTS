@@ -9,6 +9,7 @@ import com.example.cerbungapp.databinding.ActivityLoginBinding
 import com.example.cerbungapp.databinding.ActivityMainBinding
 
 class LoginActivity : AppCompatActivity() {
+    val USERNAME = "USER"
     private lateinit var binding: ActivityLoginBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,6 +30,7 @@ class LoginActivity : AppCompatActivity() {
             if (login(username, password)){
                 Toast.makeText(this, "Login Success", Toast.LENGTH_SHORT).show()
                 val intent = Intent(this, MainActivity::class.java)
+                intent.putExtra(USERNAME, username)
                 startActivity(intent)
             } else{
                 Toast.makeText(this, "Login Failed", Toast.LENGTH_SHORT).show()

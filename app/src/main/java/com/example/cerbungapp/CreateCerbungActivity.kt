@@ -5,10 +5,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Spinner
+import android.widget.Toast
 import com.example.cerbungapp.databinding.ActivityCreateCerbungBinding
 import com.example.cerbungapp.databinding.ActivityRegisterBinding
 
 class CreateCerbungActivity : AppCompatActivity() {
+    var USERNAME = "USER"
     val genre = arrayOf("Horror", "Mistery", "Sci-Fi", "Romance")
     val CERBUNGTITLE = "title"
     val GENRESELECTED = "genre"
@@ -29,7 +31,10 @@ class CreateCerbungActivity : AppCompatActivity() {
 
 
         binding.btnNextPage.setOnClickListener {
+            var username = intent.getStringExtra(USERNAME).toString()
+
             var intent = Intent(this, CreateCerbungActivityP2::class.java)
+            intent.putExtra(USERNAME, username)
             intent.putExtra(CERBUNGTITLE, binding.txtCreateTitle.text.toString())
             intent.putExtra(GENRESELECTED, binding.spinnerGenre.selectedItem.toString())
             intent.putExtra(DESCRIPTION, binding.txtShortDescription.text.toString())
