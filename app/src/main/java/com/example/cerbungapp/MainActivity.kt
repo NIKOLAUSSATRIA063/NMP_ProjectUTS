@@ -17,8 +17,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        Toast.makeText(this, "Halo, " + intent.getStringExtra(USERNAME), Toast.LENGTH_SHORT).show()
-        Global.user = intent.getStringExtra(USERNAME).toString()
+        if(Global.user == ""){
+            Global.user = intent.getStringExtra(USERNAME).toString()
+        }
+        Toast.makeText(this, "Halo, " + Global.user, Toast.LENGTH_SHORT).show()
+//        Global.user = intent.getStringExtra(USERNAME).toString()
 
 
         val lm: LinearLayoutManager = LinearLayoutManager(this)
