@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.cerbungapp.Global.cerbungs
+import com.example.cerbungapp.Global.judul
+import com.example.cerbungapp.Global.paragrafs
 import com.example.cerbungapp.databinding.ActivityCerbungDetailsBinding
 import com.example.cerbungapp.databinding.ActivityLoginBinding
 import com.squareup.picasso.Picasso
@@ -26,12 +29,13 @@ class CerbungDetails : AppCompatActivity() {
 
         var id = intent.getIntExtra("idcerbung", 0)
 
-        var title = Global.cerbungs[id].title
-        Global.judul = title
-        var url = Global.cerbungs[id].url
-        var genre = Global.cerbungs[id].genre
-        var author = Global.cerbungs[id].author
-        var date = Global.cerbungs[id].lastUpdate
+        var title = cerbungs[id].title
+        judul = title
+        var url = cerbungs[id].url
+        var genre = cerbungs[id].genre
+        var author = cerbungs[id].author
+        var date = cerbungs[id].lastUpdate
+        var likes = cerbungs[id].like
 
         binding.titleTxt.setText(title.toString())
 
@@ -41,6 +45,8 @@ class CerbungDetails : AppCompatActivity() {
         builder.build().load(url).into(binding.imagePoster)
 
         binding.genreChip.setText(genre.toString())
+        binding.likeChip.setText(likes.toString() + " Likes")
+        binding.countPrgChip.setText(countParagraf(title).toString() + " paragrafs")
         binding.authorsTxt.setText("by " + author.toString())
         binding.dateText.setText(date.toString())
 
@@ -58,6 +64,15 @@ class CerbungDetails : AppCompatActivity() {
 
     private fun addParagraf(titleCerbung:String, paragraf:String, user:String) {
         val newParag = Paragraf(titleCerbung, paragraf,user)
-        Global.paragrafs.add(newParag)
+        paragrafs.add(newParag)
+    }
+    private fun countParagraf(titleCerbung:String): Int{
+        var count = 0
+        for(paragraf in paragrafs){
+            if(titleCerbung == paragraf.namecerbung){
+                count+=1
+            }
+        }
+        return count
     }
 }

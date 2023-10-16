@@ -62,7 +62,7 @@ class CreateCerbungActivityP3 : AppCompatActivity() {
 
                 var dateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
                 var dateNow = dateFormat.format(Date())
-                var newCerbung = Cerbung(cerbugTitle.toString(), author.toString(), access.toString(), dateNow, urlImg.toString(), description.toString() , genreSelected.toString())
+                var newCerbung = Cerbung(cerbugTitle.toString(), author.toString(), access.toString(), dateNow, urlImg.toString(), description.toString() , genreSelected.toString(), 0)
                 cerbungs.add(newCerbung)
                 var newParagraf = Paragraf(cerbugTitle.toString(), firstParagraph.toString(), author.toString())
                 paragrafs.add(newParagraf)

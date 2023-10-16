@@ -53,12 +53,32 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/titleTxt" />
 
+            <com.google.android.material.chip.Chip
+                android:id="@+id/likeChip"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="28dp"
+                android:text="Like"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleTxt" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/countPrgChip"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="28dp"
+                android:text="count"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/likeChip" />
+
             <TextView
                 android:id="@+id/authorsTxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="28dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="76dp"
                 android:text="Authors"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/genreChip" />
@@ -67,11 +87,11 @@
                 android:id="@+id/dateText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="124dp"
-                android:layout_marginEnd="36dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="28dp"
                 android:text="Date"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imagePoster" />
+                app:layout_constraintTop_toBottomOf="@+id/countPrgChip" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerViewDetailsCerbung"
@@ -87,8 +107,8 @@
                 android:id="@+id/btnFollow"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="52dp"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="40dp"
                 android:text="Follow"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textNewParag" />
@@ -97,7 +117,7 @@
                 android:id="@+id/btnSubmit"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="52dp"
+                android:layout_marginTop="40dp"
                 android:layout_marginEnd="36dp"
                 android:text="Submit"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -107,7 +127,9 @@
                 android:id="@+id/textNewParag"
                 android:layout_width="0dp"
                 android:layout_height="96dp"
+                android:layout_marginStart="28dp"
                 android:layout_marginTop="32dp"
+                android:layout_marginEnd="28dp"
                 android:ems="10"
                 android:hint="Continue The Story"
                 android:inputType="textMultiLine"
