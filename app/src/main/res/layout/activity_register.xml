@@ -50,7 +50,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
             <EditText
-                android:id="@+id/txtEmail"
+                android:id="@+id/txtUrl"
                 android:layout_width="0dp"
                 android:layout_height="52dp"
                 android:layout_marginStart="32dp"
@@ -58,7 +58,7 @@
                 android:layout_marginEnd="32dp"
                 android:ems="10"
                 android:fontFamily="@font/quicksand"
-                android:hint="Email"
+                android:hint="url profile"
                 android:inputType="textEmailAddress"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -77,7 +77,7 @@
                 android:inputType="textPassword"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtEmail" />
+                app:layout_constraintTop_toBottomOf="@+id/txtUrl" />
 
             <EditText
                 android:id="@+id/txtCreateConfPassword"
