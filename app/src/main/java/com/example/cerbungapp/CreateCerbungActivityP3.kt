@@ -4,7 +4,9 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.example.cerbungapp.Global.accounts
 import com.example.cerbungapp.Global.cerbungs
+import com.example.cerbungapp.Global.paragrafs
 import com.example.cerbungapp.databinding.ActivityCreateCerbungBinding
 import com.example.cerbungapp.databinding.ActivityCreateCerbungP3Binding
 import java.text.SimpleDateFormat
@@ -28,7 +30,7 @@ class CreateCerbungActivityP3 : AppCompatActivity() {
         binding = ActivityCreateCerbungP3Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        var author = intent.getStringExtra(USERNAME).toString()
+        var author = intent.getStringExtra(USERNAME)
         var cerbugTitle = intent.getStringExtra(CERBUNGTITLE)
         var genreSelected = intent.getStringExtra(GENRESELECTED)
         var description = intent.getStringExtra(DESCRIPTION)
@@ -62,6 +64,8 @@ class CreateCerbungActivityP3 : AppCompatActivity() {
                 var dateNow = dateFormat.format(Date())
                 var newCerbung = Cerbung(cerbugTitle.toString(), author.toString(), access.toString(), dateNow, urlImg.toString(), description.toString() , genreSelected.toString())
                 cerbungs.add(newCerbung)
+                var newParagraf = Paragraf(cerbugTitle.toString(), firstParagraph.toString(), author.toString())
+                paragrafs.add(newParagraf)
                 Toast.makeText(this, "Tambah data berhasil", Toast.LENGTH_SHORT).show()
                 var intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)

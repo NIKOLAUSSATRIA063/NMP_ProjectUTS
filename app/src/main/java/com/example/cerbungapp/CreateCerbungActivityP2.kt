@@ -23,6 +23,7 @@ class CreateCerbungActivityP2 : AppCompatActivity() {
         binding = ActivityCreateCerbungP2Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val username = intent.getStringExtra(USERNAME).toString()
         val tempTitle = intent.getStringExtra(CERBUNGTITLE)
         val tempGenreSelected = intent.getStringExtra(GENRESELECTED)
         val tempDescription = intent.getStringExtra(DESCRIPTION)
@@ -44,7 +45,6 @@ class CreateCerbungActivityP2 : AppCompatActivity() {
 
 
             var intent = Intent(this, CreateCerbungActivityP3::class.java)
-            var username = intent.getStringExtra(USERNAME).toString()
             intent.putExtra(USERNAME, username)
             intent.putExtra(CERBUNGTITLE, tempTitle.toString())
             intent.putExtra(GENRESELECTED, tempGenreSelected.toString())
