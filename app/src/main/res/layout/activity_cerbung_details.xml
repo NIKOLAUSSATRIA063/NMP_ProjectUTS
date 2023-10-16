@@ -148,6 +148,15 @@
                 app:layout_constraintHorizontal_bias="0.49"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/recyclerViewDetailsCerbung" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/accessChip"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toEndOf="@+id/genreChip"
+                app:layout_constraintTop_toBottomOf="@+id/titleTxt" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 

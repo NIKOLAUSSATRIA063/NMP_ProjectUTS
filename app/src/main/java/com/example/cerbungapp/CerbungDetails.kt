@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.cerbungapp.Global.cerbungs
 import com.example.cerbungapp.Global.judul
@@ -50,14 +51,26 @@ class CerbungDetails : AppCompatActivity() {
         binding.authorsTxt.setText("by " + author.toString())
         binding.dateText.setText(date.toString())
 
+        var statusRestric = cerbungs[id].restricted
+        if(statusRestric.toString() == "Restricted"){
+            binding.accessChip.setText(statusRestric.toString())
+            binding.textNewParag.isVisible = false
+            binding.btnSubmit.text = "Request"
+        }else{
+            binding.accessChip.isVisible =false
+        }
+
+
         var user = Global.user
         binding.btnSubmit.setOnClickListener(){
-            var paragraf = binding.textNewParag.text.toString()
-            if(paragraf != ""){
-                addParagraf(title, paragraf, user)
-                val intent = Intent(this, MainActivity::class.java)
-                intent.putExtra(USERNAME, user)
-                startActivity(intent)
+            if(statusRestric.toString() != "Restricted"){
+                var paragraf = binding.textNewParag.text.toString()
+                if(paragraf != ""){
+                    addParagraf(title, paragraf, user)
+                    val intent = Intent(this, MainActivity::class.java)
+                    intent.putExtra(USERNAME, user)
+                    startActivity(intent)
+                }
             }
         }
     }
