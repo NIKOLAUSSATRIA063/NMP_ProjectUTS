@@ -31,15 +31,20 @@ class CreateCerbungActivity : AppCompatActivity() {
 
 
         binding.btnNextPage.setOnClickListener {
-            var username = intent.getStringExtra(USERNAME).toString()
+            if (binding.txtCreateTitle.text.toString() == "" || binding.txtImgUrl.text.toString() == "" || binding.txtShortDescription.text.toString() == ""){
+                Toast.makeText(this, "Please fill the textbox", Toast.LENGTH_SHORT).show()
+            }
+            else{
+                var username = intent.getStringExtra(USERNAME).toString()
 
-            var intent = Intent(this, CreateCerbungActivityP2::class.java)
-            intent.putExtra(USERNAME, username)
-            intent.putExtra(CERBUNGTITLE, binding.txtCreateTitle.text.toString())
-            intent.putExtra(GENRESELECTED, binding.spinnerGenre.selectedItem.toString())
-            intent.putExtra(DESCRIPTION, binding.txtShortDescription.text.toString())
-            intent.putExtra(URL, binding.txtImgUrl.text.toString())
-            startActivity(intent)
+                var intent = Intent(this, CreateCerbungActivityP2::class.java)
+                intent.putExtra(USERNAME, username)
+                intent.putExtra(CERBUNGTITLE, binding.txtCreateTitle.text.toString())
+                intent.putExtra(GENRESELECTED, binding.spinnerGenre.selectedItem.toString())
+                intent.putExtra(DESCRIPTION, binding.txtShortDescription.text.toString())
+                intent.putExtra(URL, binding.txtImgUrl.text.toString())
+                startActivity(intent)
+            }
         }
 
     }

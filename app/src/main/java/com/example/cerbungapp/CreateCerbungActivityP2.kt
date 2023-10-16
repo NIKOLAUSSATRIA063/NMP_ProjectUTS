@@ -42,19 +42,22 @@ class CreateCerbungActivityP2 : AppCompatActivity() {
             } else if (binding.radioRestricted.isChecked) {
                 userAccess = "Restricted"
             }
+            if (userAccess == "" || binding.txtFirstParagraph.text.toString() == ""){
+                Toast.makeText(this, "Please Choose the Access and fill the paragraph", Toast.LENGTH_SHORT).show()
+            }
+            else{
+                var intent = Intent(this, CreateCerbungActivityP3::class.java)
+                intent.putExtra(USERNAME, username)
+                intent.putExtra(CERBUNGTITLE, tempTitle.toString())
+                intent.putExtra(GENRESELECTED, tempGenreSelected.toString())
+                intent.putExtra(DESCRIPTION, tempDescription.toString())
+                intent.putExtra(URL, tempUrlImg.toString())
+                intent.putExtra(CERBUNGTITLE, tempTitle.toString())
+                intent.putExtra(ACCESS,userAccess.toString())
+                intent.putExtra(FIRSTPARAGRAPH, binding.txtFirstParagraph.text.toString())
 
-
-            var intent = Intent(this, CreateCerbungActivityP3::class.java)
-            intent.putExtra(USERNAME, username)
-            intent.putExtra(CERBUNGTITLE, tempTitle.toString())
-            intent.putExtra(GENRESELECTED, tempGenreSelected.toString())
-            intent.putExtra(DESCRIPTION, tempDescription.toString())
-            intent.putExtra(URL, tempUrlImg.toString())
-            intent.putExtra(CERBUNGTITLE, tempTitle.toString())
-            intent.putExtra(ACCESS,userAccess.toString())
-            intent.putExtra(FIRSTPARAGRAPH, binding.txtFirstParagraph.text.toString())
-
-            startActivity(intent)
+                startActivity(intent)
+            }
         }
     }
 }
