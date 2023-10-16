@@ -11,6 +11,7 @@ import com.squareup.picasso.Picasso
 
 class CerbungAdapter() : RecyclerView.Adapter<CerbungAdapter.CerbungViewHolder>() {
     class CerbungViewHolder (val binding: CerbungItemBinding): RecyclerView.ViewHolder(binding.root)
+    var USERNAME = "USER"
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CerbungViewHolder {
         val binding = CerbungItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)

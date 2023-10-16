@@ -68,6 +68,7 @@ class CreateCerbungActivityP3 : AppCompatActivity() {
                 paragrafs.add(newParagraf)
                 Toast.makeText(this, "Tambah data berhasil", Toast.LENGTH_SHORT).show()
                 var intent = Intent(this, MainActivity::class.java)
+                intent.putExtra(USERNAME, author)
                 startActivity(intent)
             }
             catch (e: Exception) {

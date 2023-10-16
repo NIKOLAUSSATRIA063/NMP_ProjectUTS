@@ -11,10 +11,10 @@ import com.squareup.picasso.Picasso
 
 class CerbungDetails : AppCompatActivity() {
     private lateinit var binding: ActivityCerbungDetailsBinding
+    var USERNAME = "USER"
     override fun onCreate(savedInstanceState: Bundle?) {
 //        super.onCreate(savedInstanceState)
 //        setContentView(R.layout.activity_cerbung_details)
-
         super.onCreate(savedInstanceState)
         binding = ActivityCerbungDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -50,6 +50,7 @@ class CerbungDetails : AppCompatActivity() {
             if(paragraf != ""){
                 addParagraf(title, paragraf, user)
                 val intent = Intent(this, MainActivity::class.java)
+                intent.putExtra(USERNAME, user)
                 startActivity(intent)
             }
         }
