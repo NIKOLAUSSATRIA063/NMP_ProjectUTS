@@ -1,6 +1,6 @@
 package com.example.cerbungapp
 
-data class Account(val username:String, val email:String, val password:String) {
+data class Account(val username:String, val url_profile:String, val password:String) {
 //    fun checkPassword(inputPassword:String): Boolean{
 //        return password == inputPassword
 //    }
