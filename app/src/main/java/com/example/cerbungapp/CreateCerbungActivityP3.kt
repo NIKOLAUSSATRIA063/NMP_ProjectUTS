@@ -47,6 +47,13 @@ class CreateCerbungActivityP3 : AppCompatActivity() {
 
         binding.btnPrev2.setOnClickListener {
             var intent = Intent(this, CreateCerbungActivityP2::class.java)
+            intent.putExtra(CERBUNGTITLE, cerbugTitle.toString())
+            intent.putExtra(DESCRIPTION, description.toString())
+            intent.putExtra(GENRESELECTED, genreSelected.toString())
+            intent.putExtra(URL, urlImg.toString())
+            intent.putExtra(ACCESS, access.toString())
+            intent.putExtra(FIRSTPARAGRAPH, firstParagraph.toString())
+            intent.putExtra(USERNAME, author)
             startActivity(intent)
         }
 

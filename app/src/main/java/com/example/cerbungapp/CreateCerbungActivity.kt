@@ -29,6 +29,25 @@ class CreateCerbungActivity : AppCompatActivity() {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         binding.spinnerGenre.setAdapter(adapter)
 
+        var tempTitle = intent.getStringExtra(CERBUNGTITLE).toString()
+        val tempGenreSelected = intent.getStringExtra(GENRESELECTED)
+        val tempDescription = intent.getStringExtra(DESCRIPTION)
+        val tempUrlImg = intent.getStringExtra(URL)
+        val username = intent.getStringExtra(USERNAME).toString()
+
+        if(tempTitle != "null"){
+            binding.txtCreateTitle.setText(tempTitle)
+            binding.txtShortDescription.setText(tempDescription.toString())
+            binding.txtImgUrl.setText(tempUrlImg.toString())
+            var indexGenre=0
+            genre.forEachIndexed { index, nameGenre ->
+                if(nameGenre== tempGenreSelected.toString()){
+                    indexGenre = index
+                }
+            }
+            binding.spinnerGenre.setSelection(indexGenre)
+        }
+
 
         binding.btnNextPage.setOnClickListener {
             if (binding.txtCreateTitle.text.toString() == "" || binding.txtImgUrl.text.toString() == "" || binding.txtShortDescription.text.toString() == ""){

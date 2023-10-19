@@ -28,9 +28,25 @@ class CreateCerbungActivityP2 : AppCompatActivity() {
         val tempGenreSelected = intent.getStringExtra(GENRESELECTED)
         val tempDescription = intent.getStringExtra(DESCRIPTION)
         val tempUrlImg = intent.getStringExtra(URL)
+        val access = intent.getStringExtra(ACCESS)
+        val firstParagraph = intent.getStringExtra(FIRSTPARAGRAPH).toString()
+
+        if(firstParagraph != "null"){
+            binding.txtFirstParagraph.setText(firstParagraph.toString())
+            if(access.toString() == "PUBLIC"){
+                binding.radioPublic.isChecked = true
+            }else{
+                binding.radioRestricted.isChecked = true
+            }
+        }
 
         binding.btnPrev.setOnClickListener {
             var intent = Intent(this, CreateCerbungActivity::class.java)
+            intent.putExtra(CERBUNGTITLE, tempTitle.toString())
+            intent.putExtra(USERNAME, username)
+            intent.putExtra(DESCRIPTION, tempDescription.toString())
+            intent.putExtra(GENRESELECTED, tempGenreSelected.toString())
+            intent.putExtra(URL, tempUrlImg.toString())
             startActivity(intent)
         }
 
